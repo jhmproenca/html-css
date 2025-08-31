@@ -11,6 +11,8 @@
 
         table{
             width: 500px;
+            border-collapse: collapse;
+            position: relative;/*para colar cabelacho ao rolar tela*/
         }
 
         td, th{
@@ -18,9 +20,26 @@
             padding: 10px;
         }
 
+        caption{
+            font-size: 1.5em;
+            font-weight: bold;
+            padding: 10px;
+            background-color: lightgray;
+        }
+
         thead, tfoot{
             background-color: gray;
             color: white;
+        }
+
+        thead > tr > th{ /*para colar cabelacho ao rolar tela*/
+            position: sticky;
+            top: -1px;
+            background-color: gray;
+        }
+
+        tbody > tr:nth-child(2n){ /* pode usar (odd ou 2n-1) ou (even ou 2n) */
+            background-color: lightgray;
         }
 
         td.num{
@@ -33,6 +52,7 @@
     <!--
     ANATOMIA PARA TABELAS GRANDES
     TABLE
+        CAPTION
         THEAD
             TR, TD, TH
         TBODY
@@ -40,11 +60,13 @@
         TFOOT
             TR, TD, TH
     -->
+    
     <table>
+        <caption>População dos Estados</caption>
         <thead>
             <tr>
-                <th>Estado</th>
-                <th>População</th>
+                <th scope="col">Estado</th>
+                <th scope="col" style="width: 50px;">População</th>
             </tr>
         </thead>
         <tbody>
@@ -63,7 +85,7 @@
         </tbody>
         <tfoot>
             <tr>
-                <th>Total de Habitantes</th>
+                <th scope="row">Total de Habitantes</th>
                 <td class="num">0000</td>
             </tr>
         </tfoot>
