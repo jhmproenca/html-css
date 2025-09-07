@@ -1,0 +1,78 @@
+@charset "UTF-9";
+
+/*Todas as demais medias*/
+
+/*Typical Device Breakpoints
+--------------------------------
+pequenas telas: até 600px
+celular: de 600 até 768px
+tablet: 768 até 992px
+desktop: 992 até 1200px
+grandes telas: acime de 1200px
+*/
+
+@media print{
+
+    *{
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    body{
+        background-image: url(../imagens/back-print.jpg); /*NÃO FUNCIONA PARA IMPRESSÃO*/
+    }
+
+    main{
+        border: 2px solid black;
+    }
+
+    main::after{
+        content: 'Essa impressão foi um teste da aula de MEDIA QUERIES';
+    }
+
+    main h1{
+        text-shadow: none;
+        color: black;
+    }
+
+    #phone{display: none;}
+    #tablet{display: none;}
+    #print{display: block;}
+    #pc{display: none;}
+    #tv{display: none;}
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) { /*TABLET*/
+    body{
+        background-image: url(../imagens/back-tablet.jpg);
+    }
+
+    #phone{display: none;}
+    #tablet{display: block;}
+    #print{display: none;}
+    #pc{display: none;}
+    #tv{display: none;}
+}
+
+@media screen and (min-width: 992px) and (max-width: 1200px) { /*DESKTOP*/
+    body{
+        background-image: url(../imagens/back-pc.jpg);
+    }
+
+    #phone{display: none;}
+    #tablet{display: none;}
+    #print{display: none;}
+    #pc{display: block;}
+    #tv{display: none;}
+}
+
+@media screen and (min-width: 1200px) { /*GRANDES TELAS*/
+    body{
+        background-image: url(../imagens/back-tv.jpg);
+    }
+    
+    #phone{display: none;}
+    #tablet{display: none;}
+    #print{display: none;}
+    #pc{display: none;}
+    #tv{display: block;}
+}
