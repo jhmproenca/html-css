@@ -1,2 +1,9 @@
 @charset "utf-8";
 /*Modo retrato*/
+
+body{
+    background: url(../imagens/cev-portrait.jpg);
+    background-position: center bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
